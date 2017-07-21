@@ -33,15 +33,15 @@ email:String='gemechu@gmail.com';
 iputdata;
 catArray;
 
-  constructor(private route:ActivatedRoute,private dbService:DataService,private router:Router)  { 
+  constructor(private route:ActivatedRoute,private dbService:DataService,private router:Router)  {
     // this.route.params.subscribe(params => {this.iputdata = params['input']} );
     //console.log("this.posts");
     //this.dbService.getPosts(this.email).subscribe(res=>{this.posts = res;
     //console.log(this.posts);
-    //});   
+    //});
    //console.log(this.posts);
   }
- 
+
  myLocation;
  MaxFee;
  allposts;
@@ -64,11 +64,9 @@ ngOnInit(){
    this.getpostByLocation();
 }
 
-// getpostByLocation(){
-//    // this.dbService.getPosts(this.myLocation).subscribe(res=>{this.posts = res});   
-// }
 
-getpostByFee(){   
+
+getpostByFee(){
     this.router.navigate(['minFeePosts']);
 
 }
