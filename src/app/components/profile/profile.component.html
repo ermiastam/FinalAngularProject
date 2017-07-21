@@ -1,0 +1,36 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="md-toolbar-tools">
+    <div class="demo-dialog-content">
+      <span>Profile</span>
+      <md-card><img md-card-avatar src={{auth.getUser().picture}}>
+        {{auth.getUser().name}}
+        <br>
+        <p>user id: {{auth.getUser().sub}}</p>
+        <p>user email: {{auth.getUser().email}}</p>
+
+        <div class="form-group">
+          <md-input-container class="md-icon-float md-block">
+            <input mdInput placeholder="Address" value="" formControlName="address" [(ngModel)]="user.address">
+          </md-input-container>
+          <small *ngIf="!userForm.controls['address'].valid" class="text-danger">Required</small>
+
+
+          <md-input-container class="md-icon-float md-block">
+            <input mdInput placeholder="Phone No." value="" formControlName="phonenumber"
+                   [(ngModel)]="user.phonenumber">
+          </md-input-container>
+          <small *ngIf="!userForm.controls['phonenumber'].valid" class="text-danger">Required</small>
+        </div>
+
+        <input type="submit" class="btn btn-primary" [disabled]="!userForm.valid" value="Add">
+
+
+      </md-card>
+
+
+    </div>
+
+  </div>
+</form>
+
+

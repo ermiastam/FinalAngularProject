@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Job</h2>
+    </div>
+  </md-toolbar>
+  <div class="form-group">
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Job Name" value="" formControlName="name">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Category" value="" formControlName="category">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+
+      <textarea mdInput placeholder="Description" value="" formControlName="description"></textarea>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Duration" value="" formControlName="duration">
+    </md-input-container>
+  </div>
+  <div class="form-group">
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Hourly Fee" value="" type="number" formControlName="hourlyFee">
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+    <md-input-container class="md-icon-float md-block">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      <input mdInput [mdDatepicker]="picker" placeholder="Prefferd Date" formControlName="preferredDate">
+
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Prefered Time" value="" formControlName="preferredTime">
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <!--<input mdInput placeholder="Location" value="">-->
+      <input mdInput placeholder="Location" value="" autocorrect="off" autocapitalize="off" spellcheck="off" #search
+             type="text" formControlName="locations">
+    </md-input-container>
+   <!-- <label>Submit</label>
+    &lt;!&ndash;<button type="submit" [routerLink]="['homepage']">Submit</button>&ndash;&gt;
+    <input type="submit" value="Submit">
+    <label>Cancel</label>
+    <button>
+      <md-icon class="material-icons" [routerLink]="['']">cancel</md-icon>
+    </button>-->
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" [routerLink]="['']">Cancel</button>
+
+</form>
+
+
+</body>
+</html>

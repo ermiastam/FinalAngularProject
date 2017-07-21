@@ -1,0 +1,50 @@
+<h2>Details</h2>
+  <table border = "1px">
+    <tr>
+    <th>Picture</th> 
+    <th></th>
+  </tr>
+  <tr>
+    <td>Name</td> 
+    <td *ngIf="applicantdetail">{{applicantdetail.name}}</td>
+  </tr>
+  <tr>
+    <td>Email</td> 
+    <td *ngIf="applicantdetail">{{applicantdetail.email}}</td>
+  </tr>
+  <tr>
+    <td>Address</td> 
+    <th *ngIf="applicantdetail">{{applicantdetail.address}}</th>
+  </tr>
+  <tr>
+    <td>PhoneNumber</td> 
+    <td *ngIf="applicantdetail">{{applicantdetail.PhoneNumber}}</td>
+  </tr>
+</table>
+
+<hr>
+<h3>Evaluation</h3>
+<hr>
+<div *ngFor="let eval of evaluation">
+  <p><b>Evaluator:</b> {{eval.email}}</p>
+  <p><b>Rating:</b> {{eval.rating}}</p>
+  <p><b>Comment:</b> {{eval.comment}}</p>
+  <hr>
+</div>
+<br>
+<table border = "1px">
+  <tr>
+    <td><label>Give your comment</label></td>
+    <td><textarea type = "text" rows = "5" cols = "20" #comment></textarea></td>
+  </tr>
+  <tr>
+    <td><label>Number of stars (1 - 5)</label></td>
+    <td><input type = "number" min="1" max="5" disabled = true #stars /></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button (click)="pushComment(comment.value, stars.value)">Push Comment</button></td>
+  </tr>
+</table>
+<br>
+<button (click)="hideMe()">Hide Details</button>

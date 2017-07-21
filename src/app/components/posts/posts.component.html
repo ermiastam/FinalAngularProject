@@ -1,0 +1,27 @@
+  <h2>These are the jobs you have posted so far ...</h2>
+<table border = "1px">
+  <tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Fee(/hr)</th>
+    <th>Hours</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th></th>
+  </tr>
+  <tr *ngFor = "let post of posts; let num = index">
+    <td>{{num + 1}}</td>
+    <td>{{post.name}}</td>
+    <td>{{post.category}}</td>
+    <td>{{post.preferedDate}}</td>
+    <td>{{post.preferedtime}}</td>
+    <td>${{post.hourlyFee}}</td>
+    <td>{{post.duration}}</td>
+    <td>{{post.description}}</td>
+    <td>{{post.postStatus}}</td>
+    <td><a [routerLink]="['postapplicants']" [queryParams]="{id: post._id}">Applicants</a></td>
+  </tr>
+<table>  

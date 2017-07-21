@@ -1,0 +1,64 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<div role="dialog" aria-label="Eat me!" layout="column" layout-align="center center">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add Job</h2>
+    </div>
+  </md-toolbar>
+  <div class="demo-dialog-content">
+
+    <md-input-container class="md-icon-float md-block">
+
+      <input mdInput placeholder="Job Name" value="" formControlName="name" >
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Category" value="" formControlName="category" >
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+
+      <textarea mdInput placeholder="Description" value="" formControlName="description" ></textarea>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Duration" value="" formControlName="duration" >
+    </md-input-container>
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Hourly Fee" value="" formControlName="hourlyFee"  >
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+    <md-input-container class="md-icon-float md-block">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+      <input mdInput [mdDatepicker]="picker" placeholder="Prefferd Date"  formControlName="preferredDate" >
+
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Prefered Time" value="" formControlName="preferredTime" >
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-block">
+      <input mdInput placeholder="Location" value=""  autocorrect="off" autocapitalize="off" spellcheck="off" #search type="text" formControlName="locations" >
+    </md-input-container>
+  </div>
+
+  <div class="userActionButtonGroup">
+    <button md-icon-button md-mini-fab color="accent">
+      <md-icon class="material-icons" >done</md-icon>
+    </button>
+    <label>Submit</label>
+    <button md-icon-button md-mini-fab color="warn" md-dialog-close>
+      <md-icon class="material-icons">cancel</md-icon>
+    </button>
+    <label>Cancel</label>
+  </div>
+
+</div>
+  <!--<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">-->
+  <!--<agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>-->
+<!--</agm-map>-->
+</form>
+
+
+
+
+
+

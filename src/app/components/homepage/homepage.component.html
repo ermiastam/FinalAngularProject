@@ -1,0 +1,66 @@
+<!--<md-tab-group>
+  <i class="material-icons">person</i>
+  <md-tab label="Profile"><app-profile></app-profile></md-tab>
+  <md-tab label="My Posts">jhnj</md-tab>
+
+  <md-tab label="Post a Job">
+    &lt;!&ndash;<app-postjob></app-postjob>&ndash;&gt;
+    <a (click)="openDialog()">Add Post</a>
+  </md-tab>
+
+
+</md-tab-group>-->
+<!--<ul>-->
+<!--<li *ngFor="let item of value2">{{item.location.coordinates[0]}}</li>-->
+<!--</ul>-->
+
+<i class="material-icons">list</i>
+<select>
+  <option value="selectCategory" selected>Select Category</option>
+  <option value="softwareDevelopment">Software Development</option>
+  <option value="education">Education</option>
+  <option value="medicalScience">Medical Science</option>
+  <option value="agriculture">Agriculture</option>
+</select>
+
+<i class="material-icons">location_on</i>
+<md-input-container class="md-icon-float md-block">
+
+  <input mdInput placeholder="Location" value="">
+</md-input-container>
+<i class="material-icons">attach_money</i>
+<md-input-container class="md-icon-float md-block">
+  <input mdInput placeholder="Minimum Fee" value="">
+
+</md-input-container>
+
+
+<i class="material-icons">add_circle</i>
+<a [routerLink]="['jobpost']"  >Post</a>
+
+<!--<i class="material-icons">add_circle</i>-->
+<!--<a [routerLink]="['myposts', 'searchposts']" [queryParams]="{email: auth.getUser().email}">Manage My Posts</a>-->
+
+
+
+<a [routerLink]="['myposts', 'searchposts']" [queryParams]="{email:auth.getUser().email}"> | Manage My Posts</a> |
+
+
+
+<a [routerLink]="['posts']" >Available Posts</a>
+
+
+
+<agm-map *ngIf="auth.isAuthenticated()"  [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+  <!--<agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>-->
+  <agm-marker *ngFor="let item of value2" [latitude]=item.location.coordinates[1]
+              [longitude]=item.location.coordinates[0]></agm-marker>
+</agm-map>
+
+<!--<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">-->
+<!--<agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>-->
+<!--</agm-map>-->
+<router-outlet></router-outlet>
+
+
+
